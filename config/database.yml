@@ -66,6 +66,4 @@ test:
 #
 production:
   <<: *default
-  database: tml_status_dashboard_production
-  username: tml_status_dashboard
-  password: <%= ENV["TML_STATUS_DASHBOARD_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
