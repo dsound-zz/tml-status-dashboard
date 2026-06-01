@@ -29,7 +29,7 @@ class StatusSimulatorJob < ApplicationJob
     up_ids = StateStatus.up.pluck(:id)
     return if up_ids.empty?
 
-    count = [1, 2].sample
+    count = [ 1, 2 ].sample
     target_ids = up_ids.sample(count)
     StateStatus.where(id: target_ids).update_all(status: "down", planned_outage_start: nil, planned_outage_end: nil, outage_reason: nil)
   end

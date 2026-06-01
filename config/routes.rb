@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :states, only: [:index]
+      resources :states, only: [ :index ]
       post "simulate", to: "simulations#trigger"
     end
   end
